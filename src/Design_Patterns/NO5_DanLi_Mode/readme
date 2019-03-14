@@ -1,0 +1,44 @@
+有一些对象我们只需要一个，比方说：线程池(threadpool)、缓存、对话框、注册表的对象
+
+单件模式确保一个类只有一个实例，并提供一个全局访问点
+
+
+1、同步getInstance方法
+        public class Singleton{
+            private static Singleton uniqueInstance ;
+            private Singleton(){}
+            public static synchronized Singleton getInstance(){  //同步解决了多线程的安全问题，但性能变差
+                if(uniqueInstance == null){    //懒汉式，当要用时才实例化变量
+                    uniqueInstance = new Singleton();
+                }
+                return uniqueInstance;
+            }
+        }
+    同步会降低程序的性能，同步一个方法可能会使程序的运行效率下降100倍，当getInstance方法在不频繁的地方使用时，可以同步该方法。
+
+2、急切实例化
+    public class Singleton{
+        private static Singleton uniqueInstance = new Singleton();//保证了线程安全
+        private Singleton(){}
+        public static Singleton getInstance(){
+            return uniqueInstance;
+        }
+    }
+
+3、双重检查加锁(若性能为关注的重点，那么这个方法可以提高程序性能，该方法不适用于java1.4及更早的版本)
+        public class Singleton{
+            private static volatile Singleton uniqueInstance;
+            private Singleton(){}
+            public static Singleton getInstance(){
+                if(uniqueInstance == null){
+                    synchronized(Singleton.class){
+                        if(uniqueInstance == null){
+                            uniqueInstance = new Singleton();
+                        }
+                    }
+                }
+                return uniqueInstance;
+            }
+        }
+        //volatile关键字确保：当uniqueInstance变量被初始化为Singleton实例时，多个线程能正确的处理uniqueInstance变量
+
