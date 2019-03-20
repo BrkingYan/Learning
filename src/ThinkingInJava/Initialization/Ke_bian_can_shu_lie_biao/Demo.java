@@ -34,6 +34,7 @@ public class Demo {
             System.out.print(s + " ");
         }
         System.out.println();
+        System.out.println();
     }
 
     public static void main(String[] args){
