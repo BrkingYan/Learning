@@ -38,8 +38,6 @@ public class javaTest {
                 System.out.println(", name: " + name);
             }
 
-
-
             con.close();
         } catch (ClassNotFoundException e) {
             System.out.println("数据库驱动没有安装");
