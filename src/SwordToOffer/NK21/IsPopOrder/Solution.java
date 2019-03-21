@@ -1,7 +1,6 @@
 package SwordToOffer.NK21.IsPopOrder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -17,18 +16,41 @@ class Solution {
         for (int i = 0;i < pushA.length;i++){
             pushList.add(pushA[i]);
         }
+        List<Integer> popList = new ArrayList<>();
+        for (int i = 0;i < popA.length;i++){
+            popList.add(popA[i]);
+        }
+
+        for (int i = 0;i < popA.length;i++){
+            if (! pushList.contains(popList.get(i))){
+                return false;
+            }
+        }
 
         for (int i = 0;i < popA.length;i++){
             //找出popA中的元素在PushList中的坐标
-            int index = pushList.indexOf(popA[i]);
-            List<Integer> pushCopyList = new ArrayList<>();
-            //复制剩余元素
-            for (int j = 0;j < popA.length;j++){
-                if (j != index){
-                    pushCopyList.add(pushList.get(j));
-                }
+            int indexPush = pushList.indexOf(popA[i]);
+            if (!removeElementAndCheck(pushList,popList,indexPush,i)){
+                return false;
             }
+        }
+        return true;
+    }
 
+    private boolean removeElementAndCheck(List<Integer> pushList,List<Integer> popList,int indexPush,int indexPop){
+        List<Integer> pushLeftList = new ArrayList<>();
+        List<Integer> popLeftList = new ArrayList<>();
+        pushLeftList.addAll(pushList);
+        popLeftList.addAll(popList);
+
+        for (int i = 0;i <= indexPop;i++){
+            pushLeftList.remove(popLeftList.remove(0));
+        }
+
+        for (int i = 0;i < pushLeftList.size();i++){
+            if (pushLeftList.get(i) != popLeftList.get(pushLeftList.size()-i-1)){
+                return false;
+            }
         }
         return true;
     }
