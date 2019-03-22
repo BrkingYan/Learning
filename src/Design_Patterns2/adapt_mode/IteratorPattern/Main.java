@@ -22,7 +22,7 @@ public class Main {
         dinnerTable.addDinner(new Dinner("first dinner",23));
         dinnerTable.addDinner(new Dinner("second dinner",12));
         dinnerTable.addDinner(new Dinner("third dinner",21));
-        dinnerTable.addDinner(new Dinner("forth dinner",34)); 
+        dinnerTable.addDinner(new Dinner("forth dinner",34));
         dinnerTable.addDinner(new Dinner("5th dinner",11));
         dinnerTable.addDinner(new Dinner("6th dinner",24));
 
