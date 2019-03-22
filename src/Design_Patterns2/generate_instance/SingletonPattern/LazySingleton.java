@@ -1,6 +1,6 @@
 package Design_Patterns2.generate_instance.SingletonPattern;
 
-public class LazySingleton {
+class LazySingleton {
     private static  LazySingleton instance = null;
 
     private LazySingleton(){
