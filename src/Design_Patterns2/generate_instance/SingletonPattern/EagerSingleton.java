@@ -1,6 +1,6 @@
 package Design_Patterns2.generate_instance.SingletonPattern;
 
-public class EagerSingleton {
+class EagerSingleton {
     private static EagerSingleton singleton = new EagerSingleton();//线程安全，但是性能不好
 
     private EagerSingleton(){

@@ -1,6 +1,6 @@
 package Design_Patterns2.generate_instance.SingletonPattern;
 
-public class MyThread extends Thread {
+class MyThread extends Thread {
 
     @Override
     public void run() {
