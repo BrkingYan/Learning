@@ -1,6 +1,6 @@
 package Design_Patterns2.generate_instance.SingletonPattern;
 
-public class SychronLazySingleton4 {
+class SychronLazySingleton4 {
     private static  SychronLazySingleton4 instance = null;
 
     private SychronLazySingleton4(){

@@ -1,0 +1,9 @@
+从键盘获取数据的3种方式：
+（1）main方法的args接收参数：java param1 param2 Xxx. java
+（2）通过使用Scanner类【Jdk 1.5版本后】
+    Scanner sc = new Scanner(System.in);
+    String s = sc.nextLine();
+    int x = sc.nextInt()
+（3）通过字符缓冲流包装标准输入流，来实现
+    把字节流转换成字符流，然后通过字符缓冲流操作。
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
