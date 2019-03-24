@@ -10,6 +10,7 @@ public class Outer {
         }
     }
 
+
     public Inner getInner(){
         return new Inner();
     }
