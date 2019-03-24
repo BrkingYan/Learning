@@ -4,7 +4,7 @@ package Design_Patterns2.adapt_mode.AdapterPattern.AdapterUseExtend;
 class AdaptedBanner extends Banner implements DisplayTech {
 
 
-    public AdaptedBanner(String content) {
+    AdaptedBanner(String content) {
         super(content);
     }
 

@@ -1,7 +1,7 @@
-package Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory;
 
 
-// ±È½ÏÐ¡µÄItem
+//  " ï¿½ï¿½ï¿½ï¿½" ï¿½ï¿½ ï¿½È½ï¿½Ð¡ï¿½ï¿½Item
 public abstract class Link extends Item {
 
     protected String url;

@@ -5,6 +5,9 @@ import Design_Patterns2.GiveToSubClass.Factory_Method.framework.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+*  专门生产id card 的具体工厂
+* */
 public class IdCardFactory extends Factory {
 
     private List<String> owners;

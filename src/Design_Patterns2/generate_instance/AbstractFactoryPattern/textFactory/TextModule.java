@@ -1,8 +1,6 @@
-package Design_Patterns2.generate_instance.AbstractFactory.TextFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern.textFactory;
 
-import Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory.*;
-
-import java.util.Iterator;
+import Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory.*;
 
 public class TextModule extends Module{
 
