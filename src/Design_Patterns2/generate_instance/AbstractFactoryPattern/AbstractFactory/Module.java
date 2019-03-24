@@ -1,9 +1,9 @@
-package Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory;
 
 import java.util.ArrayList;
 
 
-// 比较大的Item
+// " 模锟斤拷" 锟角比较达拷锟絀tem
 public abstract class Module extends Item {
     protected ArrayList<Item> itemList = new ArrayList<>();
 

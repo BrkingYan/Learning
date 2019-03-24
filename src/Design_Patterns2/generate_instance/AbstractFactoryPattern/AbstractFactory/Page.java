@@ -1,11 +1,9 @@
-package Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 
-// ҳ��
+//  " ��ҳ" ҳ�� �� ��title��author�͸���Item(Link��Module)���ɣ����涨�˸������ϵĹ���
 public abstract  class Page implements HTMLable{
     protected String title;
     protected String author;
@@ -38,6 +36,6 @@ public abstract  class Page implements HTMLable{
             }
         }
     }
-    public abstract String transToHtml();
+    //public abstract String transToHtml();
 
 }

@@ -1,16 +1,23 @@
-package Design_Patterns2.generate_instance.AbstractFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern;
 
-import Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory.*;
 
+import Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory.*;
+
+
+/*
+*  Main类只用到了AbstractFactory中的几个类，因此，编译Main的同时只会编译AbstractFactory中的几个类
+*  textFactory中的类需要单独编译，并以命令行参数传给Main执行
+* */
 public class Main {
     public static void main(String[] args) {
         if (args.length != 1){
-            System.out.println("Usage : java Main class.name.of.TextFactory");
-            System.out.println("Example1 : java Main listFactory.ListFactory");
+            System.out.println("Usage : java Main class.name.of.textFactory");
+            System.out.println("Example1 : java Main textFactory.TextFactory");
             System.out.println("Example2 : java Main tableFactory.TableFactory");
             System.exit(0);
         }
-        Factory factory = Factory.getFactory(args[0]);
+        Factory factory = Factory.getFactory(args[0]);//创建具体类的实例对象
+
         Link peoplePaperLink = factory.createLink("人民日报","http://www.people.com.cn/");
         Link gmPaperLink = factory.createLink("光明日报","http://www.gmw.cn");
 
