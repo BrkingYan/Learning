@@ -1,0 +1,8 @@
+E:\javaCode\basic1\src>
+javac -cp .\; .\Design_Patterns2\generate_instance\AbstractFactoryPattern\Main.java -d ..\out\production\basic_Learning
+
+E:\javaCode\basic1\src>
+javac -cp .\; .\Design_Patterns2\generate_instance\AbstractFactoryPattern\textFactory\TextFactory.java -d ..\out\production\basic_Learning
+
+E:\javaCode\basic1\out\production\basic_Learning>
+java Design_Patterns2.generate_instance.AbstractFactoryPattern.Main Design_Patterns2.generate_instance.AbstractFactoryPattern.textFactory.TextFactory

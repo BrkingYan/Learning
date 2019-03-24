@@ -1,9 +1,9 @@
-package Design_Patterns2.generate_instance.AbstractFactory.TextFactory;
+package Design_Patterns2.generate_instance.AbstractFactoryPattern.textFactory;
 
 
-import Design_Patterns2.generate_instance.AbstractFactory.AbstractFactory.*;
+import Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory.*;
 
-// 制作页面文本的工厂
+// 制作页面文本的工厂，但这个工厂可以生产和文本相关的多种Item，并可以进行装配
 public class TextFactory extends Factory {
 
     @Override
