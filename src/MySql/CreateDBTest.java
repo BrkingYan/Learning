@@ -1,16 +1,8 @@
 package MySql;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.*;
 
-public class javaTest {
-
+public class CreateDBTest {
     public static void main(String[] args) {
         //jdbc驱动
         String driver="com.mysql.cj.jdbc.Driver";
@@ -22,7 +14,6 @@ public class javaTest {
 
         Connection con = null;
         Statement stmt = null;
-        ResultSet ret = null;
         try {
             //注册JDBC驱动程序
             Class.forName(driver);
@@ -33,21 +24,10 @@ public class javaTest {
             }
             //执行query
             stmt = con.createStatement();
-
-            String sql = "select * from students";
-            ret = stmt.executeQuery(sql);
-            //从result set 提取数据
-            while (ret.next()){
-                int id = ret.getInt("id");
-                String name = ret.getString("name");
-                int age = ret.getInt("age");
-                System.out.print("id: " + id);
-                System.out.print(", name: " + name);
-                System.out.println(", age: " + age);
-            }
-
+            //创建一个数据库
+            String sql = "create database studentsInJDBC";
+            stmt.executeUpdate(sql);
             //关闭
-            ret.close();
             stmt.close();
             con.close();
         } catch (ClassNotFoundException e) {
