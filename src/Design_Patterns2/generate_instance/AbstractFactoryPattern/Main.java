@@ -16,6 +16,8 @@ public class Main {
             System.out.println("Example2 : java Main tableFactory.TableFactory");
             System.exit(0);
         }
+        //TextFactory提前编译好了
+        //通过反射的方式获取TextFactory的实例对象
         Factory factory = Factory.getFactory(args[0]);//创建具体类的实例对象
 
         Link peoplePaperLink = factory.createLink("人民日报","http://www.people.com.cn/");

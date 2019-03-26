@@ -31,4 +31,26 @@ class Outer {
 
         Outer.Inner inner2 = inner1.getOuter().getInner("123");
     }
+
+    /*
+    *  成员方法中不能有静态变量，方法中的变量都是临时的，和方法一样在堆栈中，当方法执行完弹栈后，变量销毁
+    *  而static变量在方法区中，是共享的
+    * */
+    /*void print(){
+        static int a = 1;
+    }*/
+
+
+    /*
+    *  static 关键字是用来修饰类中成员的
+    * */
+
+    /*
+    *  静态方法中也不能有静态变量，因为他也是一个方法，
+    *  方法执行完后弹栈，内部变量也会销毁
+    * */
+    /*static void print1(){
+        int a = 1;
+        static int b = 2;
+    }*/
 }
