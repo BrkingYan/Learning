@@ -24,6 +24,7 @@ class Outer {
         //方式1
         Outer outer = new Outer();
         Outer.Inner inner = outer.new Inner("123");
+        System.out.println("inner class's name : " + inner.getClass().getName());// Outer$Inner
         String desc = inner.desc;
         //方式2
         Outer outer1 = new Outer();

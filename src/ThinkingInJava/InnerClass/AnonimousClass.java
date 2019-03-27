@@ -78,6 +78,7 @@ public class AnonimousClass {
 
         Destination d = a.destination("222");
         a.m.show();
+        System.out.println("ni ming class's name:" + a.x.getClass().getSimpleName());
     }
 
     /*
@@ -117,6 +118,5 @@ public class AnonimousClass {
             }
         };
     }
-
 
 }
