@@ -9,7 +9,29 @@ import java.util.ArrayList;
 * (注意: 在返回值的list中，数组长度大的数组靠前)
 * */
 class Solution {
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        return new ArrayList<>();
+    ArrayList<ArrayList<Integer>> totalPath = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+        if (root == null && target == 0){
+            return totalPath;
+        }
+        FindSubPath(root,target,new ArrayList<>());
+        return totalPath;
+    }
+
+    //这个函数的功能就是往totalPath里面添加子路径
+    private void FindSubPath(TreeNode root, int target,ArrayList<Integer> formerList) {
+        ArrayList<Integer> currentPath = new ArrayList<>(formerList);
+        if (root.val == target && root.left == null && root.right == null){ //到这一步说明是一条成功的路径，就添加进去
+            currentPath.add(root.val);
+            totalPath.add(currentPath);
+        }else if (root.val < target){
+            currentPath.add(root.val);
+            if (root.left != null){
+                FindSubPath(root.left,target-root.val,currentPath);
+            }
+            if (root.right != null){
+                FindSubPath(root.right,target-root.val,currentPath);
+            }
+        }
     }
 }
