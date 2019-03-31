@@ -16,5 +16,6 @@ public class PrintStreamDemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
