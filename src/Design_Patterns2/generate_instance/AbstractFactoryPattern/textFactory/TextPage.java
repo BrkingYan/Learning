@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class TextPage extends Page {
 
 
-    public TextPage(String title, String author) {
+    TextPage(String title, String author) {
         super(title, author);
     }
 

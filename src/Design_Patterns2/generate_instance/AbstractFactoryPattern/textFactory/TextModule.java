@@ -4,7 +4,7 @@ import Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory
 
 public class TextModule extends Module{
 
-    public TextModule(String description){
+    TextModule(String description){
         super(description);
     }
 

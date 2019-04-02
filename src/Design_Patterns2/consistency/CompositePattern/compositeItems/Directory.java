@@ -35,7 +35,7 @@ public class Directory extends Entry {
         //先打印整个目录的情况
         System.out.println(parentDir + "/" + this);
         //再依次打印目录内部的情况
-        System.out.print("      |");
+        //System.out.print("      |");
         Iterator<Entry> it = entries.iterator();
         while (it.hasNext()){
             Entry entry = it.next();
@@ -47,6 +47,7 @@ public class Directory extends Entry {
             entry.printList(parentDir + "/" + name);
         }
     }
+
 
     /*
     它继承了这个方法
@@ -60,5 +61,6 @@ public class Directory extends Entry {
     public void add(Entry entry) {
         entry.grade += this.grade;
         entries.add(entry);
+        entry.parent = this;
     }
 }
