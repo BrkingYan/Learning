@@ -27,6 +27,7 @@ public class File extends  Entry {
         System.out.println(parentDir + "/" + this);//只有File的print方法真正打印了东西，其他的最终会去调用File的该方法
     }
 
+
     /*@Override
     void add(Entry entry) throws FileTreatmentException {
         super.add(entry);

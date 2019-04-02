@@ -4,7 +4,7 @@ import Design_Patterns2.generate_instance.AbstractFactoryPattern.AbstractFactory
 
 public class TextLink extends Link {
 
-    public TextLink(String description, String url) {
+    TextLink(String description, String url) {
         super(description, url);
     }
 

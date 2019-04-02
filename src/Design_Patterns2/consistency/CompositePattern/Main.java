@@ -44,6 +44,8 @@ public class Main {
         Directory tomuraDir = new Directory("tomura");
         tomuraDir.add(new File("game.doc",100));
         tomuraDir.add(new File("iunk.mail",100));
+        File file = new File("hello.java",50);
+        tomuraDir.add(file);
 
         usrDir.add(yukiDir);
         usrDir.add(hanakoDir);
@@ -52,9 +54,8 @@ public class Main {
         //rootDir.printList();
         rootDir.printList();
 
-        /*File file = new File("123",11);
-        usrDir.add(file);
-        file.printList();*/
+
+        System.out.println(yukiDir.getFullPath());
 
 
     }
