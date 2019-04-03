@@ -12,5 +12,6 @@ public class Test {
         list.add(new Person());
         list.add(new Person());
         System.out.println(list);
+
     }
 }
