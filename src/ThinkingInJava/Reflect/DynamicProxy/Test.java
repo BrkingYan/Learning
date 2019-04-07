@@ -4,13 +4,13 @@ import java.lang.reflect.Proxy;
 
 public class Test {
     public static void main(String[] args) {
-        ChairSpeaker chairMan = new ChairSpeaker();
+        ChairMan chairMan = new ChairMan();
         chairMan.speak();
         System.out.println();
         System.out.println("-------------------------------------------");
 
         Man man = (Man) Proxy.newProxyInstance(
-                ChairSpeaker.class.getClassLoader(),
+                ChairMan.class.getClassLoader(),
                 new Class[]{Speaker.class,Leader.class},
                 new Handler(chairMan));
         man.speak();

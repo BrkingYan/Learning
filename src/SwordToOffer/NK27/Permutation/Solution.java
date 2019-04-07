@@ -10,19 +10,37 @@ import java.util.*;
 * */
 class Solution {
     public ArrayList<String> Permutation(String str) {
-        int typeNum = 0;
-        int length = str.length();
-        char[] array = str.toCharArray();
-        Set<Character> set = new HashSet<>();
-
-        //PermutationHelper(array,set);
-        //Collection<String> list = new ArrayList<>(set);
-        //ArrayList<String> list1 = new ArrayList<>(list);
-        return new ArrayList<>();
-
+        char[] charArray = str.toCharArray();
+        ArrayList<String> list = new ArrayList<>();
+        if (str.equals("")){
+            return list;
+        }else {
+            PermutationHelper(charArray,0,list);
+            System.out.println(list);
+            Collections.sort(list);
+            System.out.println(list);
+            return list;
+        }
     }
 
-    void PermutationHelper(char[] totalArray,Set<String> set){
+    private void PermutationHelper(char[] charArray, int deep,ArrayList<String> list){
+        if (deep == charArray.length){
+            String line = String.valueOf(charArray);
+            if (!list.contains(line)){
+                list.add(line);
+            }
+        }else {
+            for (int j = deep;j < charArray.length;j++){
+                swap(charArray,j,deep);
+                PermutationHelper(charArray,deep+1,list);
+                swap(charArray,j,deep);
+            }
+        }
+    }
 
+    private void swap(char[] charArray, int first, int second){
+        char temp = charArray[first];
+        charArray[first] = charArray[second];
+        charArray[second] = temp;
     }
 }

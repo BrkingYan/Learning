@@ -1,6 +1,6 @@
 package ThinkingInJava.Reflect.DynamicProxy;
 
-class ChairSpeaker implements Speaker,Leader {
+class ChairMan implements Speaker,Leader {
     public void speak(){
         System.out.print("chair man mao says : China NO1");
     }
