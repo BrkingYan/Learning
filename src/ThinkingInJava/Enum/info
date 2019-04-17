@@ -1,0 +1,45 @@
+
+/*
+ *  枚举的标准格式
+ */
+
+ // 枚举类继承了java.lang.Enum类
+final class Color extends Enum
+{
+    // 1、编译器添加的values()方法，用于返回一个装有所有枚举成员的数组 Color[]
+    public static Color[] values()
+    {
+        return (Color[])$VALUES.clone();
+    }
+
+    // 2、编译器添加的valueOf(String)方法，该方法会调用java.lang.Enum类的valueOf(Class<> , String)方法
+    public static Color valueOf(String name)
+    {
+        return (Color)Enum.valueOf(ThinkingInJava/Enum/Color, name);
+    }
+
+    // 3、Color的私有构造器，供Color中的实例初始化使用，运行时由编译器执行，别人无法执行，也可以自定义，加上新参数
+    private Color(String s, int i)
+    {
+        super(s, i);
+    }
+
+    // 4、枚举中的实例成员，它们都是Color类型
+    public static final Color RED;
+    public static final Color BLUE;
+    public static final Color YELLOW;
+    private static final Color $VALUES[];
+
+    // 5、静态代码块，用于初始化枚举中的实例成员，并将所有实例装到一个values数组中
+    static
+    {
+        RED = new Color("RED", 0);   //枚举中的成员都是当作枚举类型创建的
+        BLUE = new Color("BLUE", 1); //用的是Color的私有构造器
+        YELLOW = new Color("YELLOW", 2);
+        //如果Color自定义了构造器，那么定义枚举成员的时候就必须加上新的参数，如RED("red");
+
+        $VALUES = (new Color[] {      //将初始化的枚举成员装到一个Color[]数组中
+            RED, BLUE, YELLOW
+        });
+    }
+}

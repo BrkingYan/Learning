@@ -33,6 +33,8 @@ public class test1 {
         System.out.print(buff[7]);// f
         fr.close();
 
+        FileInputStream fileInputStream = new FileInputStream("e:s");
+DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
         /*
         *  若buff的长度不够长，则是一段一段的读取的

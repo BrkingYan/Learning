@@ -1,0 +1,84 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3)
+// Source File Name:   Color.java
+
+package ThinkingInJava.Enum.MultiConstructor;
+
+import java.io.PrintStream;
+
+class Color extends Enum
+{
+    1、values()方法
+    public static Color[] values()
+    {
+        return (Color[])$VALUES.clone();
+    }
+    2、valueOf()方法
+    public static Color valueOf(String name)
+    {
+        return (Color)Enum.valueOf(ThinkingInJava/Enum/MultiConstructor/Color, name);
+    }
+    3、自定义构造器
+    private Color(String s, int i, String color)
+    {
+        super(s, i);
+        this.color = color;
+    }
+    4、私有构造器
+    private Color(String s, int i)
+    {
+        super(s, i);
+    }
+    5、普通方法
+    void show()
+    {
+        System.out.println((new StringBuilder()).append(name()).append(" : ").append(color).toString());
+    }
+    6、覆盖父类java.lang.Enum的toString()
+    public String toString()
+    {
+        return (new StringBuilder()).append(name()).append(" : ").append(color).toString();
+    }
+
+    7、enum实例
+    public static final Color RED;
+    public static final Color GREEN;
+    public static final Color BLANK;
+    public static final Color YELLOW;
+    public static final Color WHITE;
+    public static final Color NOCOLOR;
+
+    8、field字段
+    String color;
+    private static final Color $VALUES[];
+    9、静态块
+    static
+    {
+        RED = new Color("RED", 0, "red");
+        GREEN = new Color("GREEN", 1, "green");
+        BLANK = new Color("BLANK", 2);
+        YELLOW = new Color("YELLOW", 3, "yellow");
+        WHITE = new Color("WHITE", 4) {
+
+            void show()
+            {
+                throw new RuntimeException("white nope");
+            }
+
+        }
+;
+        NOCOLOR = new Color("NOCOLOR", 5) {
+
+            void show()
+            {
+                throw new RuntimeException("nocolor nope");
+            }
+
+        }
+;
+        $VALUES = (new Color[] {
+            RED, GREEN, BLANK, YELLOW, WHITE, NOCOLOR
+        });
+    }
+}
