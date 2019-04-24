@@ -4,6 +4,8 @@ import java.util.*;
 
 
 /*
+*  滑窗
+*
 * 输出所有和为S的连续正数序列。
 * 序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序
 *
@@ -15,9 +17,26 @@ import java.util.*;
 class Solution {
     public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
         ArrayList<ArrayList<Integer>> totalList = new ArrayList<>();
-        int limit = (int)Math.sqrt(2*sum);
-        for (int n = 2;n<limit;n++){
-
+        if (sum < 3){
+            return totalList;
+        }
+        int limit = sum / 2;
+        int low = 1;
+        int high = 2;
+        while (low < high){
+            int subSum = (low + high) * (high-low+1) / 2;
+            if (subSum == sum){
+                ArrayList<Integer> innerList = new ArrayList<>();
+                for (int i = low;i<=high;i++){
+                    innerList.add(i);
+                }
+                totalList.add(innerList);
+                low++;
+            }else if (subSum < sum){
+                high++;
+            }else {
+                low++;
+            }
         }
         return totalList;
     }
