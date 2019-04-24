@@ -10,5 +10,6 @@
     <orderEntry type="library" name="algs4" level="project" />
     <orderEntry type="library" name="org.json" level="project" />
     <orderEntry type="library" name="apt-mirror-api-0.1" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.39-bin" level="project" />
   </component>
 </module>

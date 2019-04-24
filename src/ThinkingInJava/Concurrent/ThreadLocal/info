@@ -1,0 +1,5 @@
+线程本地存储
+
+基本原理:
+同一个 ThreadLocal 所包含的对象（对ThreadLocal< String >而言即为 String 类型变量），
+在不同的 Thread 中有不同的副本
