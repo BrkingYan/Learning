@@ -10,9 +10,10 @@ import java.util.concurrent.Executors;
 class ThreadPool {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();//返回的是一个ThreadPoolExecutor
-        for (int i = 0;i<5;i++){
+        for (int i = 0;i<1;i++){
             exec.execute(new Task());
         }
+        System.out.println("activeCount:"+Thread.activeCount());
         exec.shutdown();
     }
 }

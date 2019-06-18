@@ -3,6 +3,7 @@ package ThinkingInJava.Concurrent.CyclicBarrier;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CyclicBarrier;
 
 class Horse implements Runnable {
@@ -30,7 +31,7 @@ class Horse implements Runnable {
                 barrier.await();//等待所有任务都跑完一次，否则就一直等待
             }
         }catch (InterruptedException e){
-
+            Thread.currentThread().interrupt();
         }catch (BrokenBarrierException e){
             throw new RuntimeException(e);
         }

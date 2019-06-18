@@ -10,7 +10,7 @@ class HorseRace {
     private CyclicBarrier barrier;
 
     HorseRace(int nHorses,final int pause){
-        //创建一个新的 CyclicBarrier，它将在给定数量的参与者（线程）处于等待状态时启动，
+        //创建一个新的 CyclicBarrier，它将在给定 " 数量" 的参与者（线程）处于等待状态时启动，
         // 并在启动 barrier 时执行给定的屏障操作，该操作由最后一个进入 barrier 的线程执行。
         //处理完所有的行之后，即所有的马都迈出一步之后，将执行所提供的 Runnable 屏障操作
         barrier = new CyclicBarrier(nHorses, new Runnable() {
@@ -36,6 +36,7 @@ class HorseRace {
                 }
             }
         });
+        //准备运动员，只有所有的Horse都执行到await()处时才会触发barrier
         for (int i = 0;i<nHorses;i++){
             Horse horse = new Horse(barrier);
             horses.add(horse);

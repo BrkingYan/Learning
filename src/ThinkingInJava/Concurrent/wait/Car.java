@@ -12,13 +12,13 @@ class Car {
     //去蜡完成，通知其他线程
     synchronized void buffed(){
         waxOn = false;
-        notifyAll();
+        notifyAll();//唤醒在此对象监视器上等待的所有线程
     }
 
     //等待上蜡
     synchronized void waitForWax() throws InterruptedException {
         while (waxOn == false){
-            wait();
+            wait();//wait()方法会释放锁，并让当前线程在此处阻塞
         }
     }
     //等待去蜡

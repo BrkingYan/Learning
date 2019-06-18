@@ -10,6 +10,7 @@ class SingleThreadPool {
         for (int i = 0;i<5;i++){
             exec.execute(new Task());
         }
+        System.out.println("activeCount:"+Thread.activeCount());
         exec.shutdown();
     }
 }

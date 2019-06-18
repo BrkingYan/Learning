@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="asm-3.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/asm-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/cglib-nodep-2.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

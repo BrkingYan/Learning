@@ -20,6 +20,7 @@ class Task implements Runnable{
     public void run() {
         while (countDown-- > 0){
             System.out.print(status());
+            System.out.println("***current thread :" + Thread.currentThread());
             Thread.yield();
         }
         System.out.println("over");

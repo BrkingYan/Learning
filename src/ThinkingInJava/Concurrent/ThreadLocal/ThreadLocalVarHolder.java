@@ -9,6 +9,7 @@ import java.util.Random;
 class ThreadLocalVarHolder {
     /*
     *  ThreadLocal中装的是TaskInfo对象
+    *  即使AddTask没有持有TaskInfo对象，ThreadLocal也会让其内部的ThreadLocal.Map将AddTask(current thread)和TaskInfo绑定起来
     *  使用ThreadLocal创建的变量只能被当前线程访问，其他线程则无法访问和修改。
     *  每个访问 ThreadLocal 变量的线程都有自己的一个“本地”TaskInfo实例副本
     * */
