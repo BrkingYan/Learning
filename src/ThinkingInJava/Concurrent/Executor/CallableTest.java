@@ -2,6 +2,7 @@ package ThinkingInJava.Concurrent.Executor;
 
 
 import java.util.ArrayList;
+import java.util.Vector;
 import java.util.concurrent.*;
 
 public class CallableTest {
@@ -24,6 +25,7 @@ public class CallableTest {
             } finally {
                 exec.shutdown();
                 //System.out.println("shutdown");
+                
             }
         }
     }

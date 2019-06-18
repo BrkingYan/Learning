@@ -27,7 +27,7 @@ class Sleeper extends Thread {
         } catch (InterruptedException e) {
             //System.err.println(getName() + " was interrupted " + " isInterrupted() " + isInterrupted());
             System.err.println(getName() + " 中途被吵醒了");
-            return;
+            Thread.currentThread().interrupt();
         }
         System.out.println(getName() + " 睡醒了");
     }

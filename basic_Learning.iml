@@ -11,5 +11,7 @@
     <orderEntry type="library" name="org.json" level="project" />
     <orderEntry type="library" name="apt-mirror-api-0.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.39-bin" level="project" />
+    <orderEntry type="library" name="cglib-2.2.3" level="project" />
+    <orderEntry type="library" name="asm-3.2" level="project" />
   </component>
 </module>
