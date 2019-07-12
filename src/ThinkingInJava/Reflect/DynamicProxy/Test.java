@@ -4,7 +4,7 @@ import java.lang.reflect.Proxy;
 
 public class Test {
     public static void main(String[] args) {
-        ChairMan chairMan = new ChairMan();
+        /*ChairMan chairMan = new ChairMan();
         chairMan.speak();
         System.out.println();
         System.out.println("-------------------------------------------");
@@ -19,6 +19,9 @@ public class Test {
         System.out.println("-------------------------------------------");
         man.getName();
         System.out.println("-------------------------------------------");
-        man.command("mike");
+        man.command("mike");*/
+
+        SuperManY y = new SuperManY();
+
     }
 }
