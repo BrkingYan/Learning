@@ -7,9 +7,10 @@ public class Main {
         sb.append(2);
         sb.append(3);
         sb.append(4);
-
         sb.delete(1,2);
         System.out.println(sb.toString());
         System.out.println(sb.length());
+        System.out.println(-1 % 4);
+
     }
 }

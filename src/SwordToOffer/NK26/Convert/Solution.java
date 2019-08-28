@@ -5,7 +5,6 @@ import java.util.List;
 
 class Solution {
     public TreeNode Convert(TreeNode pRootOfTree) {
-
         if (pRootOfTree == null){
             return null;
         }

@@ -23,11 +23,13 @@ import java.util.List;
 *
 * */
 public class Solution {
+
     public boolean duplicate(int numbers[],int length,int [] duplication) {
         List<Integer> list = new ArrayList<>();
         if (numbers.length == 0){
             return false;
         }
+
         Loop:
         for (int i = 0;i<numbers.length;i++){
             for (int j = i+1;j<numbers.length;j++){

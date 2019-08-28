@@ -1,8 +1,7 @@
 package ThinkingInJava.Concurrent.ThreadFactory;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.Condition;
 
 class DaemonFromFactory implements Runnable {
 

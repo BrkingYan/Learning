@@ -19,6 +19,7 @@ class ThreadLocalVarHolder {
         @Override
         protected TaskInfo initialValue() {
             //该实例就是ThreadLocal变量value为不同线程随机生成的TaskInfo "本地" 实例
+            
             return new TaskInfo(rand.nextInt(10000),0);
         }
 

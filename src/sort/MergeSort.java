@@ -32,15 +32,18 @@ public class MergeSort {
             temp[i] = arr[i];
         }
 
+        /*
+        *  先判断越界情况
+        * */
         for (int k = start;k<=end;k++){
-            if (leftPointer > fence)
-                arr[k] = temp[rightPointer++];
-            else if (rightPointer > end)
+            if (rightPointer > end)
                 arr[k] = temp[leftPointer++];
-            else if (temp[rightPointer] < temp[leftPointer])
+            else if (leftPointer > fence)
                 arr[k] = temp[rightPointer++];
+            else if (temp[leftPointer] < temp[rightPointer])
+                arr[k] = temp[leftPointer++];
             else
-                arr[k] = temp[leftPointer++];
+                arr[k] = temp[rightPointer++];
         }
         System.out.println(makeSpace(end-start) + start + "--" + end + " is merged");
     }

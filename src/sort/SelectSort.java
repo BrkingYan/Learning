@@ -7,7 +7,6 @@ package sort;
 *           将这个最小值和之前的最新排序好的元素互换
 * 时间复杂度也为O(n^2)
 *
-*
 * */
 public class SelectSort {
     public static void main(String[] args) {

@@ -9,46 +9,31 @@ import java.util.List;
 import java.util.Stack;
 
 class Solution {
-    private List<Integer> backUpList = new ArrayList<>();
-    private int min;
-    private int minBackUp;
-    private Stack<Integer> stack;
+    private Stack<Integer> dataStack = new Stack<>();
+    private Stack<Integer> minStack = new Stack<>();
     public void push(int node) {
-        if (stack.isEmpty()){
-            min = node;
-            minBackUp = node;
-            backUpList.add(minBackUp);
+        dataStack.push(node);
+        if (minStack.isEmpty()){
+            minStack.push(node);
         }else {
-            if (node < min){
-                if (node < minBackUp){
-                    minBackUp = min;
-                    min = node;
-                }
-                min = node;
-            }else if (node < minBackUp){
-                minBackUp = node;
-                backUpList.add(minBackUp);
+            if (node <= minStack.peek()){
+                minStack.push(node);
             }
         }
-        stack.push(node);
+
     }
 
     public void pop() {
-        if (top() == min || top() == minBackUp){
-            min = minBackUp;
-            backUpList.remove(backUpList.size()-1);
-            minBackUp = backUpList.get(backUpList.size()-1);
+        if (minStack.peek().equals(dataStack.pop())){
+            minStack.pop();
         }
-        stack.pop();
-
     }
 
     public int top() {
-        return stack.peek();
+        return dataStack.peek();
     }
 
-    //该函数能够得到栈中最小元素
     public int min() {
-        return min;
+        return minStack.peek();
     }
 }
