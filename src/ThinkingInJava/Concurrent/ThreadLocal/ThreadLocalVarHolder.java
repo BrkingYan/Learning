@@ -2,6 +2,7 @@ package ThinkingInJava.Concurrent.ThreadLocal;
 
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 
 /*
 *  多个AddTask任务共享了这个ThreadLocalVarHolder
@@ -15,7 +16,6 @@ class ThreadLocalVarHolder {
     * */
     private static ThreadLocal<TaskInfo> value = new ThreadLocal<TaskInfo>(){
         private Random rand = new Random(47);
-
         @Override
         protected TaskInfo initialValue() {
             //该实例就是ThreadLocal变量value为不同线程随机生成的TaskInfo "本地" 实例

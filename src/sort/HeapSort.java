@@ -19,8 +19,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 * */
 public class HeapSort {
     public static void main(String[] args) {
-        int[] arrr = new int[]{3,44,38,5,47,9,7};
-        heapSort2(arrr);
+        int[] arrr = new int[]{3,44,38,5,47,7,7};
+        heapSort(arrr);
         for (int e : arrr){
             System.out.println(e);
         }

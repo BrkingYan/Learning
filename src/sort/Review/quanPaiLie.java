@@ -13,9 +13,14 @@ public class quanPaiLie {
     }
 
     private static void permute(int[] arr,int start,List<LinkedList<Integer>> total,LinkedList<Integer> queue){
+
+        if (queue.size() == arr.length){
+            total.add(new LinkedList<>(queue));
+            return;
+        }
+
         for (int i = start;i<arr.length;i++){
             queue.add(arr[i]);
-            total.add(new LinkedList<>(queue));
             permute(arr,i+1,total,queue);
             queue.removeLast();
         }

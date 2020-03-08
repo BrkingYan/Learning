@@ -4,6 +4,7 @@ package ThinkingInJava.Concurrent.CyclicBarrier;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 class Horse implements Runnable {
@@ -28,6 +29,7 @@ class Horse implements Runnable {
                 synchronized (this){
                     strides += rand.nextInt(3);//每个马一次跑1、2 或 3 米
                 }
+                /************* wait ****************/
                 barrier.await();//等待所有任务都跑完一次，否则就一直等待
             }
         }catch (InterruptedException e){

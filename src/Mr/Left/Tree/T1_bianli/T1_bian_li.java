@@ -4,6 +4,7 @@ import Mr.Left.Tree.TreeNode;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class T1_bian_li {
     public static void main(String[] args) {
@@ -57,7 +58,6 @@ public class T1_bian_li {
         System.out.println(root.val);
         in_re(root.right);
     }
-
     private static void in(TreeNode root){
         LinkedList<TreeNode> stack = new LinkedList<>();
         TreeNode cur = root;
@@ -73,10 +73,13 @@ public class T1_bian_li {
         }
     }
 
+
     private static void post_re(TreeNode root){
         if (root == null){
             return;
         }
+
+
         post_re(root.left);
         post_re(root.right);
         System.out.println(root.val);
@@ -84,23 +87,22 @@ public class T1_bian_li {
 
     private static void post(TreeNode root){
         LinkedList<TreeNode> stack1 = new LinkedList<>();
-        LinkedList<TreeNode> stack2 = new LinkedList<>();
+        LinkedList<Integer> stack2 = new LinkedList<>();
         if (root != null){
             stack1.push(root);
             TreeNode cur;
             while (!stack1.isEmpty()){
                 cur = stack1.pop();
-                stack2.push(cur);
+                stack2.push(cur.val);
                 if (cur.left != null){
-                    stack1.push(cur.left);
+                    stack1.addFirst(cur.left);
+                    System.out.println(stack2);
                 }
                 if(cur.right != null){
-                    stack1.push(cur.right);
+                    stack1.addFirst(cur.right);
                 }
             }
-            while (!stack2.isEmpty()){
-                System.out.println(stack2.pop().val);
-            }
+            System.out.println(stack2);
         }
 
     }
