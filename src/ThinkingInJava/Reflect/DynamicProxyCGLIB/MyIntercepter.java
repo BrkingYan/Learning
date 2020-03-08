@@ -1,5 +1,6 @@
 package ThinkingInJava.Reflect.DynamicProxyCGLIB;
 
+import com.sun.org.apache.xpath.internal.operations.String;
 import net.sf.cglib.proxy.*;
 
 
@@ -13,6 +14,7 @@ class MyIntercepter implements MethodInterceptor {
         enhancer.setSuperclass(c);
 
         enhancer.setCallback(this);
+
 
         return enhancer.create();
     }

@@ -7,17 +7,17 @@ package sort;
 public class BubleSort {
     public static void main(String[] args) {
         int[] arrr = new int[]{3,44,38,5,47};
-        bubleSortOptimization(arrr);
+        bubleSort(arrr);
     }
 
     private static void bubleSort(int[] arr){
         int len = arr.length;
         int temp;
         for (int i = 0;i<len;i++){
-            for (int j = i+1;j<len;j++){
-                if (arr[j] < arr[i]){
-                    temp = arr[i];
-                    arr[i] = arr[j];
+            for (int j = 0;j<len-1;j++){
+                if (arr[j] > arr[j+1]){
+                    temp = arr[j+1];
+                    arr[j+1] = arr[j];
                     arr[j] = temp;
                 }
             }

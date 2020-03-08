@@ -19,7 +19,6 @@ public class BFS {
 
 
     public void bfs(){
-
         LinkedList<Integer> queue = new LinkedList<>();
         queue.add(start);
         marked[start] = true;
@@ -37,7 +36,6 @@ public class BFS {
             }
         }
     }
-
 
 
     public LinkedList<Integer> pathTo(int dest){
